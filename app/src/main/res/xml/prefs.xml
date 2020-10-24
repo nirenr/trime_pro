@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/**
+ * Copyright (C) 2015-present, osfans
+ * waxaca@163.com https://github.com/osfans
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/ime_name">
+
+    <!--SwitchPreference
+        android:key="pref_ui"
+        android:persistent="true"
+        android:title="@string/pref_ui" /-->
+    <Preference
+        android:key="pref_enable"
+        android:summary="@string/pref_enable_summary"
+        android:title="@string/pref_enable" />
+    <Preference
+        android:key="pref_select"
+        android:summary="@string/pref_select_summary"
+        android:title="@string/pref_select" />
+    <PreferenceScreen
+        android:key="pref_accessibility"
+        android:title="@string/pref_accessibility">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="speak_key_label"
+            android:title="@string/speak_key_label" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="show_bottom_key"
+            android:title="@string/show_bottom_key" />
+        <Preference
+            android:key="custom_bottom_key"
+            android:title="@string/custom_bottom_key">
+            <intent
+                android:action="custom_bottom_key"
+                android:targetClass="com.osfans.trime.CommandListSetting"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="show_top_key"
+            android:title="@string/show_top_key" />
+        <Preference
+            android:key="custom_top_key"
+            android:title="@string/custom_top_key">
+            <intent
+                android:action="custom_top_key"
+                android:targetClass="com.osfans.trime.CommandListSetting"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="speak_key"
+            android:title="@string/speak_key" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="speak_commit"
+            android:title="@string/speak_commit" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="pref_candidate"
+        android:title="@string/pref_candidate">
+        <PreferenceCategory
+            android:title="@string/pref_window"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="show_window"
+            android:title="@string/show_window" />
+        <com.osfans.trime.SeekBarPreference
+            android:defaultValue="100"
+            android:key="composition_width"
+            android:max="100"
+            android:title="@string/composition_width"
+            android:widgetLayout="@layout/preference_widget_seekbar" />
+        <ListPreference
+            android:defaultValue="false"
+            android:entries="@array/movable_entries"
+            android:entryValues="@array/movable_values"
+            android:key="layout_movable"
+            android:title="@string/layout_movable" />
+        <ListPreference
+            android:defaultValue="fixed"
+            android:entries="@array/position_entries"
+            android:entryValues="@array/position_values"
+            android:key="layout_position"
+            android:title="@string/layout_position" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="soft_cursor"
+            android:title="@string/soft_cursor" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/max_entries"
+            android:entryValues="@array/length_values"
+            android:key="layout_max_entries"
+            android:title="@string/layout_max_entries" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/cloud_max_entries"
+            android:entryValues="@array/length_values"
+            android:key="layout_cloud_max_entries"
+            android:title="@string/layout_cloud_max_entries" />
+
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/length_entries"
+            android:entryValues="@array/length_values"
+            android:key="layout_min_length"
+            android:title="@string/layout_min_length" />
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/max_entries"
+            android:entryValues="@array/length_values"
+            android:key="layout_line_max_length"
+            android:title="@string/layout_line_max_length" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="composition_single"
+            android:title="@string/composition_single" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="composition_end_top"
+            android:title="@string/composition_end_top" />
+
+        <PreferenceCategory
+            android:title="@string/pref_candidate"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="show_switches"
+            android:title="@string/show_switches" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="candidate_scroll"
+            android:title="@string/candidate_scroll" />
+        <MultiSelectListPreference
+            android:entries="@array/filter_switches_entries"
+            android:entryValues="@array/filter_switches_values"
+            android:key="filter_switches"
+            android:title="@string/filter_switches" />
+        <Preference
+            android:key="custom_candidate"
+            android:title="@string/custom_candidate">
+            <intent
+                android:action="custom_candidate"
+                android:targetClass="com.osfans.trime.CommandListSetting"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference>
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="pref_keyboard"
+        android:title="@string/pref_keyboard">
+        <PreferenceCategory
+            android:title="外观"/>
+        <Preference
+            android:key="pref_themes"
+            android:summary="@string/pref_themes_summary"
+            android:title="@string/pref_themes" />
+        <Preference
+            android:key="pref_colors"
+            android:summary="@string/pref_colors_summary"
+            android:title="@string/pref_colors" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/keyboard_height_entries"
+            android:entryValues="@array/keyboard_height_values"
+            android:key="keyboard_height"
+            android:title="@string/keyboard_height" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_colors_keyboard"
+            android:title="@string/pref_colors_keyboard" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="show_preview"
+            android:title="@string/show_preview" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="show_hint"
+            android:title="@string/show_hint" />
+        <ListPreference
+            android:defaultValue="preview"
+            android:entries="@array/inline_entries"
+            android:entryValues="@array/inline_values"
+            android:key="inline_preedit"
+            android:title="@string/inline_preedit" />
+        <PreferenceCategory
+            android:title="自定义"/>
+        <ListPreference
+            android:defaultValue="none"
+            android:key="background_package"
+            android:title="@string/background_package" />
+        <PreferenceScreen
+            android:key="custom_colors"
+            android:title="@string/custom_colors" >
+            <SwitchPreference
+                android:defaultValue="false"
+                android:key="custom_color"
+                android:summary="@string/custom_color_summary"
+                android:title="@string/custom_color"/>
+            <Preference
+                android:key="save"
+                android:title="@string/save"/>
+        </PreferenceScreen>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="keyboard_small"
+            android:title="@string/keyboard_small"/>
+        <com.osfans.trime.SeekBarPreference
+            android:defaultValue="100"
+            android:key="keyboard_width"
+            android:max="100"
+            android:title="@string/keyboard_width"
+            android:widgetLayout="@layout/preference_widget_seekbar" />
+        <!--com.osfans.trime.SeekBarPreference
+            android:defaultValue="100"
+            android:key="keyboard_height"
+            android:max="100"
+            android:title="@string/keyboard_height"
+            android:widgetLayout="@layout/preference_widget_seekbar" /-->
+         <SwitchPreference
+            android:defaultValue="false"
+            android:key="keyboard_float"
+            android:title="@string/keyboard_float" />
+        <com.osfans.trime.SeekBarPreference
+            android:defaultValue="255"
+            android:key="key_alpha"
+            android:max="255"
+            android:title="@string/key_alpha"
+            android:widgetLayout="@layout/preference_widget_seekbar" />
+        <PreferenceCategory
+            android:title="反馈"/>
+        <SwitchPreference
+            android:key="key_sound"
+            android:title="@string/key_sound" />
+        <SwitchPreference
+            android:dependency="key_sound"
+            android:key="key_sound_random"
+            android:title="@string/key_sound_random" />
+        <ListPreference
+            android:dependency="key_sound"
+            android:defaultValue="none"
+            android:key="key_sound_package"
+            android:title="@string/key_sound_package" />
+        <com.osfans.trime.SeekBarPreference
+            android:defaultValue="100"
+            android:dependency="key_sound"
+            android:key="key_sound_volume"
+            android:max="100"
+            android:title="@string/key_sound_volume"
+            android:widgetLayout="@layout/preference_widget_seekbar" />
+        <SwitchPreference
+            android:key="key_vibrate"
+            android:title="@string/key_vibrate" />
+        <com.osfans.trime.SeekBarPreference
+            android:defaultValue="10"
+            android:dependency="key_vibrate"
+            android:key="key_vibrate_duration"
+            android:max="100"
+            android:title="@string/key_vibrate_duration"
+            android:widgetLayout="@layout/preference_widget_seekbar" />
+        <PreferenceCategory
+            android:title="操作"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="key_swipe"
+            android:title="@string/key_swipe" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="key_longpress"
+            android:title="@string/key_longpress" />
+        <com.osfans.trime.SeekBarPreference
+            android:defaultValue="20"
+            android:dependency="key_longpress"
+            android:key="longpress_timeout"
+            android:max="90"
+            android:title="@string/longpress_timeout"
+            android:widgetLayout="@layout/preference_widget_seekbar" />
+        <com.osfans.trime.SeekBarPreference
+            android:defaultValue="10"
+            android:key="repeat_interval"
+            android:max="99"
+            android:title="@string/repeat_interval"
+            android:widgetLayout="@layout/preference_widget_seekbar" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="pref_input"
+        android:title="@string/pref_input">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="cloud_input"
+            android:title="@string/cloud_input" />
+        <ListPreference
+            android:defaultValue="@string/value_default"
+            android:key="recognition_service"
+            android:title="@string/recognition_service"/>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="voice_input_s2t"
+            android:title="@string/voice_input_s2t" />
+        <!--ListPreference
+            android:defaultValue="none"
+            android:key="voice_input_s2t_config"
+            android:title="@string/voice_input_s2t_config" /-->
+        <Preference
+            android:key="pref_schemas"
+            android:summary="@string/pref_schemas_summary"
+            android:title="@string/pref_schemas" />
+        <!--Preference
+            android:key="pref_schemas_mgr"
+            android:title="@string/pref_schemas_mgr">
+            <intent
+                android:targetClass="com.osfans.trime.DownloadActivity"
+                android:data="http://jieshuo666.com/download/rime/schema/"
+                android:action="@string/pref_schemas_mgr"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference-->
+        <Preference
+            android:key="pref_sync"
+            android:summary="@string/pref_sync_summary"
+            android:title="@string/pref_sync" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="phrase_sort"
+            android:title="@string/phrase_sort"
+            />
+
+        <Preference
+            android:key="clipboard_mgr"
+            android:title="@string/clipboard_mgr">
+            <intent
+                android:targetClass="com.osfans.trime.ClipboardMgr"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference>
+        <Preference
+            android:key="phrase_mgr"
+            android:title="@string/phrase_mgr">
+            <intent
+                android:targetClass="com.osfans.trime.PhraseMgr"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference>
+        <!--Preference
+            android:key="backup"
+            android:title="@string/backup_activity_title">
+            <intent
+                android:targetClass="com.osfans.trime.BackupActivity"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference-->
+    </PreferenceScreen>
+
+    <Preference
+        android:key="tools"
+        android:title="@string/tools">
+        <intent
+            android:targetClass="com.osfans.trime.ToolActivity"
+            android:targetPackage="com.osfans.trime.pro" />
+    </Preference>
+    <!--Preference
+        android:key="pref_schemas_mgr"
+        android:title="@string/download_activity_title">
+        <intent
+            android:targetClass="com.osfans.trime.DownloadActivity"
+            android:targetPackage="com.osfans.trime.pro" />
+    </Preference-->
+
+    <PreferenceScreen
+        android:key="pref_other"
+        android:order="17"
+        android:title="@string/pref_other">
+        <EditTextPreference
+            android:defaultValue="@string/default_shared_data_dir"
+            android:key="shared_data_dir"
+            android:title="@string/shared_data_dir" />
+        <EditTextPreference
+            android:defaultValue="@string/default_user_data_dir"
+            android:key="user_data_dir"
+            android:title="@string/user_data_dir" />
+        <Preference
+            android:key="install_logs"
+            android:title="@string/install_logs">
+            <intent
+                android:targetClass="com.osfans.trime.LogsActivity"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference>
+        <Preference
+            android:key="editor"
+            android:title="@string/editor">
+            <intent
+                android:targetClass="com.osfans.trime.OpenActivity"
+                android:targetPackage="com.osfans.trime.pro" />
+        </Preference>
+        <Preference
+            android:key="pref_reset"
+            android:summary="@string/pref_reset_summary"
+            android:title="@string/pref_reset" />
+        <Preference
+            android:key="pref_deploy"
+            android:summary="@string/pref_deploy_summary"
+            android:title="@string/pref_deploy" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="async_key"
+            android:title="@string/async_key" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_auto_reset"
+            android:title="@string/pref_auto_reset" />
+        <SwitchPreference
+            android:key="pref_notification_icon"
+            android:title="@string/pref_notification_icon" />
+        <SwitchPreference
+            android:key="pref_destroy_on_quit"
+            android:title="@string/pref_destroy_on_quit" />
+    </PreferenceScreen>
+
+    <!--PreferenceScreen
+        android:key="pref_help"
+        android:order="32"
+        android:title="@string/pref_help">
+        <Preference
+            android:key="pref_wiki"
+            android:title="@string/pref_wiki">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/osfans/trime/wiki/UserGuide" />
+        </Preference>
+        <Preference
+            android:key="pref_issues"
+            android:title="@string/pref_issues">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/osfans/trime/issues" />
+        </Preference>
+        <Preference
+            android:key="pref_market"
+            android:title="@string/pref_market">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://play.google.com/store/apps/details?id=com.osfans.trime" />
+        </Preference>
+        <Preference
+            android:key="pref_coolmarket"
+            android:title="@string/pref_coolmarket">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.coolapk.com/apk/com.osfans.trime" />
+        </Preference>
+        <Preference
+            android:key="pref_trime_qq"
+            android:summary="@string/pref_rime_qq_newbie_summary"
+            android:title="@string/pref_rime_qq_newbie">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26k%3Deynn0JQFzeJMgNewySPcEckXVZlJVkan" />
+        </Preference>
+        <Preference
+            android:key="pref_rime_qq"
+            android:summary="@string/pref_rime_qq_summary"
+            android:title="@string/pref_rime_qq">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Ffrom%3Dapp%26p%3Dandroid%26k%3Dm505aYSeLZjOwWeMNAViWylZZDYqMrxV" />
+        </Preference>
+    </PreferenceScreen-->
+
+    <PreferenceScreen
+        android:key="pref_about"
+        android:order="64"
+        android:summary="由nirenr基于Trime开发"
+        android:title="@string/pref_about">
+        <Preference
+            android:key="pref_wiki"
+            android:title="@string/pref_wiki">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/osfans/trime/wiki/UserGuide" />
+        </Preference>
+        <Preference
+            android:key="pref_changelog"
+            android:title="@string/pref_changelog">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/osfans/trime" />
+        </Preference>
+        <Preference
+            android:key="pref_librime_ver"
+            android:title="@string/pref_librime_ver">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/rime/librime" />
+        </Preference>
+        <Preference
+            android:key="pref_opencc_ver"
+            android:title="@string/pref_opencc_ver">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/BYVoid/OpenCC" />
+        </Preference>
+        <Preference
+            android:key="pref_licensing"
+            android:summary="@string/pref_licensing_summary"
+            android:title="@string/pref_licensing" />
+        <Preference
+            android:key="pref_pravcy"
+            android:title="@string/pref_privacy">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/osfans/trime/blob/develop/PRIVACY.md" />
+        </Preference>
+        <!--Preference
+            android:key="pref_pime"
+            android:title="@string/pref_pime">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/osfans/PIME/releases" />
+        </Preference-->
+        <Preference
+            android:key="pref_donate"
+            android:summary="@string/pref_donate_summary"
+            android:title="@string/pref_donate">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://qr.alipay.com/tsx03439zwna78hloqtm6bc" />
+        </Preference>
+        <Preference
+            android:key="pref_donate_nirenr"
+            android:title="@string/pref_donate_nirenr">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="alipayqr://platformapi/startapp?saId=10000007&amp;clientVersion=3.7.0.0718&amp;qrcode=https://qr.alipay.com/apt7ujjb4jngmu3z9a" />
+        </Preference>
+        <Preference
+            android:key="pref_credits"
+            android:title="@string/pref_credits">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/osfans/trime/releases" />
+        </Preference>
+    </PreferenceScreen>
+
+</PreferenceScreen>

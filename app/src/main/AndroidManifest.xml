@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/**
+ * Copyright (C) 2015-present, osfans
+ * waxaca@163.com https://github.com/osfans
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.osfans.trime.pro"
+    android:versionCode="1"
+    android:versionName="1.0.20201024" >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.androlua.LuaApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/icon"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:label="@string/ime_name"
+        android:theme="@style/AppTheme"
+        tools:targetApi="n">
+
+        <service
+            android:name="com.osfans.trime.Trime"
+            android:label="@string/ime_name"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <activity
+            android:name="com.osfans.trime.Pref"
+            android:label="@string/ime_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--category android:name="android.intent.category.LAUNCHER" /-->
+            </intent-filter>
+        </activity>
+        <activity android:name="com.osfans.trime.Mgr" />
+        <activity
+            android:name="com.osfans.trime.Welcome"
+            android:label="@string/ime_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.osfans.trime.CommandListSetting"/>
+        <activity android:name="com.osfans.trime.DialogActivity"
+            android:documentLaunchMode="intoExisting"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog.NoActionBar"/>
+        <activity android:name="com.osfans.trime.ClipboardMgr"
+            android:label="@string/clipboard_mgr"/>
+        <activity android:name="com.osfans.trime.PhraseMgr"
+            android:label="@string/phrase_mgr"/>
+        <activity android:name="com.androlua.LuaActivity" />
+        <activity android:name="com.androlua.LuaActivityX" />
+        <activity android:name="com.osfans.trime.ToolActivity" />
+        <activity android:name="com.osfans.trime.LogsActivity" android:label="@string/install_logs"/>
+        <activity android:name="com.osfans.trime.Import"
+            android:label="@string/import_title"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.rime" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/*" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="text/*" />
+                <data android:mimeType="*/*" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.rime" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.GET_CONTENT" />
+
+                <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:mimeType="application/zip" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:host="*" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.osfans.trime.DownloadActivity" />
+        <activity android:name="com.osfans.trime.OpenActivity" android:theme="@android:style/Theme.DeviceDefault.NoActionBar"/>
+        <activity android:name="com.osfans.trime.BackupActivity" android:label="@string/backup_activity_title"/>
+    </application>
+</manifest>

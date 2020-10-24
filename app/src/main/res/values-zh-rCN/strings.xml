@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright (C) 2015-present, osfans
+ * waxaca@163.com https://github.com/osfans
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- 输入法平台名称  -->
+    <string name="ime_name">中文输入法</string>
+
+    <!-- Preference settings -->
+    <string name="pref_help">求助</string>
+    <string name="pref_wiki">维基教程</string>
+    <string name="pref_issues">问题反馈</string>
+    <string name="pref_rime_qq_newbie">同文QQ群</string>
+    <string name="pref_rime_qq">中州韵QQ群</string>
+    <string name="pref_market">谷歌市场</string>
+    <string name="pref_coolmarket">酷安市场</string>
+
+    <string name="pref_donate">捐赠</string>
+    <string name="pref_donate_summary">自愿用支付宝捐助同文和PRIME的开发</string>
+
+    <string name="pref_about">关于</string>
+    <string name="pref_librime_ver">RIME版本</string>
+    <string name="pref_opencc_ver">OpenCC版本</string>
+    <string name="pref_changelog">Trime版本</string>
+    <string name="pref_licensing">许可证</string>
+    <string name="pref_credits">鸣谢</string>
+    <string name="pref_pime">Win10 PRIME输入法平台</string>
+    <string name="pref_privacy">隐私权政策</string>
+
+    <string name="pref_input">输入</string>
+    <string name="pref_enable">启用</string>
+    <string name="pref_enable_summary">启用中文输入法</string>
+    <string name="pref_select">选取</string>
+    <string name="pref_select_summary">选取中文输入法</string>
+    <string name="pref_themes">主题</string>
+    <string name="pref_themes_summary">选取想要的主题</string>
+    <string name="pref_schemas">方案</string>
+    <string name="pref_schemas_summary">从已安装的方案中选择要使用的方案</string>
+    <string name="pref_colors">配色</string>
+    <string name="pref_colors_summary">选取想要的键盘配色</string>
+    <string name="pref_reset">重置</string>
+    <string name="pref_reset_summary">使用缺省设置覆盖共享文件夹下同名文件</string>
+
+    <string name="pref_keyboard">键盘</string>
+    <string name="key_sound">按键声音</string>
+    <string name="key_sound_volume">按键音量</string>
+    <string name="key_vibrate">按键时振动</string>
+    <string name="key_vibrate_duration">按键振动强度</string>
+    <string name="key_vibrate_duration_unit">毫秒</string>
+    <string name="speak_key">按键时朗读字符</string>
+    <string name="speak_commit">上屏时朗读字符</string>
+    <string name="longpress_timeout">长按按键的延迟时间</string>
+    <string name="repeat_interval">重复按键的重复间隔</string>
+    <string name="show_switches">在候选栏中显示状态</string>
+    <string name="show_preview">按键时弹出显示字符</string>
+    <string name="show_window">显示悬浮窗口</string>
+    <string name="inline_preedit">嵌入式编辑模式</string>
+    <string-array name="inline_entries">
+        <item>首选</item>
+        <item>编码</item>
+        <item>输入码</item>
+        <item>无</item>
+    </string-array>
+    <string-array name="keyboard_height_entries">
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+        <item>100%</item>
+        <item>110%</item>
+        <item>120%</item>
+        <item>130%</item>
+        <item>140%</item>
+        <item>150%</item>
+    </string-array>
+    <string-array name="keyboard_height_values">
+        <item>0.5</item>
+        <item>0.6</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>0.9</item>
+        <item>1</item>
+        <item>1.1</item>
+        <item>1.2</item>
+        <item>1.3</item>
+        <item>1.4</item>
+        <item>1.5</item>
+    </string-array>
+    <string-array name="movable_entries" >
+        <item>禁止</item>
+        <item>允许</item>
+        <item>仅一次</item>
+    </string-array>
+    <string-array name="movable_values" >
+        <item>false</item>
+        <item>true</item>
+        <item>once</item>
+    </string-array>
+    <string-array name="position_entries" >
+        <item>default</item>
+        <item>left</item>
+        <item>right</item>
+        <item>left_up</item>
+        <item>right_up</item>
+        <item>fixed</item>
+        <item>bottom_left</item>
+        <item>bottom_right</item>
+        <item>top_left</item>
+        <item>top_right</item>
+    </string-array>
+    <string-array name="position_values" >
+        <item>default</item>
+        <item>left</item>
+        <item>right</item>
+        <item>left_up</item>
+        <item>right_up</item>
+        <item>fixed</item>
+        <item>bottom_left</item>
+        <item>bottom_right</item>
+        <item>top_left</item>
+        <item>top_right</item>
+    </string-array>
+    <string-array name="filter_switches_entries" >
+        <item>中/英</item>
+        <item>简/繁</item>
+        <item>全/半</item>
+        <item>./。</item>
+        <item>字符集</item>
+    </string-array>
+    <string-array name="filter_switches_values" >
+        <item>ascii_mode</item>
+        <item>simplification</item>
+        <item>full_shape</item>
+        <item>ascii_punct</item>
+        <item>extended_charset</item>
+    </string-array>
+    <string-array name="length_values" >
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="length_entries" >
+        <item>禁用</item>
+        <item>跟随主题</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="max_entries" >
+        <item>全部</item>
+        <item>跟随主题</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="cloud_max_entries" >
+        <item>全部</item>
+        <item>显示在独立悬浮候选栏</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="action_entries">
+        <item>向左</item>
+        <item>向右</item>
+        <item>删除/收起</item>
+        <item>上屏/回车</item>
+
+        <item>删音节/删句</item>
+        <item>删句</item>
+        <item>删音节</item>
+
+        <item>开头/结尾</item>
+
+        <item>删除</item>
+        <item>回车</item>
+        <item>上屏</item>
+        <item>收起</item>
+        <item>半屏</item>
+        <item>语音</item>
+        <item>中/英</item>
+    </string-array>
+    <string-array name="action_values">
+        <item>left</item>
+        <item>right</item>
+        <item>delete_hide</item>
+        <item>commit_enter</item>
+
+        <item>back_sentence_syllable</item>
+        <item>back_sentence</item>
+        <item>back_syllable</item>
+
+        <item>home_end</item>
+
+        <item>delete</item>
+        <item>enter</item>
+        <item>commit</item>
+        <item>hide</item>
+        <item>half</item>
+        <item>speech</item>
+        <item>mode</item>
+    </string-array>
+    <string name="soft_cursor">编码区使用插入符号(^)</string>
+
+    <!--
+    <string name="pref_function">功能</string>
+    <string name="pref_maintenance">维护</string>
+    <string name="pref_maintenance_summary">自动维护输入法方案</string>
+    <string name="pref_deploy_opencc">部署OpenCC</string>
+    <string name="pref_deploy_opencc_summary">修改共享文件夹opencc下的txt后需再次部署</string>
+    <string name="deploy_success">部署成功</string>
+    <string name="deploy_failure">部署失败</string>
+    <string name="sync_success">同步成功</string>
+    <string name="sync_failure">同步失败</string>
+    <string name="colors_progress">正在应用配色…</string>
+    <string name="switch_progress">正在切换方案…</string>
+-->
+    <string name="pref_deploy">部署</string>
+    <string name="pref_deploy_summary">修改设置后需要再次部署才能使修改生效</string>
+    <string name="pref_sync">同步</string>
+    <string name="pref_sync_summary">同步用户字典至sync文件夹</string>
+
+    <string name="reset_success">重置成功</string>
+    <string name="reset_failure">重置失败</string>
+
+    <string name="deploy_progress">正在部署…</string>
+    <string name="sync_progress">正在同步…</string>
+    <string name="themes_progress">正在应用主题…</string>
+    <string name="schemas_progress">正在加载方案…</string>
+
+    <string name="set_ime">设置</string>
+    <string name="no_schemas">请在用户文件夹中放入default.yaml、输入法方案！</string>
+    <string name="other_ime">其他输入法</string>
+
+    <string name="pref_ui">夜间</string>
+
+    <string name="pref_other">其他</string>
+    <string name="pref_notification_icon">显示通知栏图标</string>
+    <string name="pref_destroy_on_quit">离开时清理内存</string>
+    <string name="pref_themes_name_tongwenfeng">同文风</string>
+    <string name="pref_themes_name_trime">默认</string>
+
+    <string name="shared_data_dir">共享文件夹</string>
+    <string name="user_data_dir">用户文件夹</string>
+    <string name="pref_accessibility">无障碍</string>
+    <string name="done">完成</string>
+    <string name="key_longpress">键盘长按</string>
+    <string name="pref_schemas_mgr">更多方案</string>
+    <string name="show_bottom_key">显示底部控制键</string>
+    <string name="keyboard_height">键盘高度</string>
+    <string name="cloud_input">云输入</string>
+    <string name="key_swipe">键盘滑动</string>
+    <string name="schemas_mgr">管理</string>
+    <string name="no_select">请先启用输入法</string>
+    <string name="voice_input_s2t">语音输入时简繁转换</string>
+    <string name="voice_input_s2t_config">简繁转换配置文件</string>
+    <string name="candidate_scroll">可滚动候选栏</string>
+    <string name="layout_movable">悬浮窗口可移动</string>
+    <string name="pref_candidate">候选栏</string>
+    <string name="layout_position">悬浮窗口位置</string>
+    <string name="filter_switches">不在状态栏显示的开关</string>
+    <string name="layout_min_length">悬浮窗显示候选最小长度</string>
+    <string name="layout_max_entries">最大候选词条数</string>
+    <string name="pref_auto_reset">软件升级时自动更新内置方案</string>
+    <string name="pref_window">悬浮窗口</string>
+    <string name="layout_cloud_max_entries">最大云输入词条数</string>
+    <string name="pref_donate_nirenr">使用支付宝赞助无障碍版本开发</string>
+    <string name="add">添加</string>
+    <string name="custom_candidate">自定义候选栏按钮</string>
+    <string name="speak_key_label">读出按键说明</string>
+    <string name="system_speak">使用系统语音库朗读</string>
+    <string name="edit_title">编辑</string>
+    <string name="clipboard_mgr">剪切板管理</string>
+    <string name="phrase_mgr">短语管理</string>
+    <string name="tools">工具</string>
+    <string name="kayword">输入关键字</string>
+    <string name="pref_colors_keyboard">炫彩键盘</string>
+    <string name="show_hint">显示助记</string>
+    <string name="value_default">默认</string>
+    <string name="recognition_service">语音识别引擎</string>
+    <string name="custom_bottom_key">自定义底部控制栏</string>
+    <string name="show_top_key">显示顶部控制键</string>
+    <string name="custom_top_key">自定义顶部控制键</string>
+    <string name="error">出错</string>
+    <string name="install_logs">安装记录</string>
+    <string name="delete">删除</string>
+    <string name="key_alpha">键盘透明度</string>
+    <string name="keyboard_float">悬浮键盘</string>
+    <string name="download_activity_title">下载</string>
+    <string name="downloaded">已下载</string>
+    <string name="sound_package_title">音效</string>
+    <string name="plugin_title">脚本</string>
+    <string name="tool_title">工具</string>
+    <string name="schema_title">方案</string>
+    <string name="skin_title">主题</string>
+    <string name="waiting">请稍候</string>
+    <string name="empty">暂无内容</string>
+    <string name="keyboard_width">键盘宽度</string>
+    <string name="keyboard_small">单手模式</string>
+    <string name="key_sound_random">律动键盘音效</string>
+    <string name="key_sound_package">键盘音效包</string>
+    <string name="background_package">键盘图标包</string>
+    <string name="custom_colors">自定义颜色</string>
+    <string name="color_key_back">按键背景颜色</string>
+    <string name="custom_color">使用自定义颜色</string>
+    <string name="custom_color_summary">设置为#00000000时使用主题定义值</string>
+    <string name="editor">编辑器</string>
+    <string name="save">保存到配色文件</string>
+    <string name="phrase_sort">剪切板短语根据使用重新排序</string>
+    <string name="composition_single">悬浮窗口横向显示</string>
+    <string name="composition_width">悬浮窗口宽度</string>
+    <string name="backup_activity_title">备份与恢复</string>
+    <string name="async_key">使用线程处理按键</string>
+    <string name="composition_end_top">倒序显示</string>
+    <string name="layout_line_max_length">行最大候选数</string>
+    <string name="import_title">中文输入法-导入</string>
+</resources>
